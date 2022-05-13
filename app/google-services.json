@@ -1,0 +1,47 @@
+{
+  "project_info": {
+    "project_number": "111445327711",
+    "project_id": "firsttalk-aa10c",
+    "storage_bucket": "firsttalk-aa10c.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:111445327711:android:64ce042b1cd5feedea80ea",
+        "android_client_info": {
+          "package_name": "com.deaf.firsttalk"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "111445327711-6m67n51ehj4616c4t71k8ijf3pgnt6c1.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.deaf.firsttalk",
+            "certificate_hash": "974434d3102f7c017417eb34a90b5f06c3f2ca90"
+          }
+        },
+        {
+          "client_id": "111445327711-08u12od82jiebs2l9s3kfal7teesapn9.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyBX4-FurV79BC9btOhaaWLxWzSi3gxVxtI"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "111445327711-08u12od82jiebs2l9s3kfal7teesapn9.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
