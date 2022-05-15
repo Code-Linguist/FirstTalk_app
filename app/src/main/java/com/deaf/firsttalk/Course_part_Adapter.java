@@ -1,5 +1,4 @@
 package com.deaf.firsttalk;
-
 import android.content.Context;
 import android.util.Log;
 import android.view.LayoutInflater;
@@ -12,14 +11,10 @@ import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
 
 import com.bumptech.glide.Glide;
-import com.deaf.firsttalk.CourseImgPojo;
-import com.deaf.firsttalk.R;
-import com.deaf.firsttalk.RecycleItemClickListener;
 
 import java.util.List;
 
-public class Course_part_Adapter extends RecyclerView.Adapter<Course_part_Adapter.ArtistViewHolder> {
-
+public class Course_part_Adapter extends RecyclerView.Adapter<Course_part_Adapter.ArtistViewHolder>{
     private Context mCtx;
     private List<Course_part_Pojo> artistList1;
     private RecycleItemClickListener clickListener1;
@@ -36,14 +31,14 @@ public class Course_part_Adapter extends RecyclerView.Adapter<Course_part_Adapte
         return new ArtistViewHolder(view1);
     }
 
-
     @Override
-    public void onBindViewHolder(@NonNull Course_part_Adapter.ArtistViewHolder holder, int position) {
+    public void onBindViewHolder(@NonNull ArtistViewHolder holder, int position) {
         final Course_part_Pojo uploadinfo= artistList1.get(position);
         holder.partnm.setText(uploadinfo.getPname());
-      //  Log.e("bjnvbmn",uploadinfo.pname);
-        //Glide.with(mCtx).load(uploadinfo.getPimage()).into(holder.pimage);
+        //Log.e("ghjh",uploadinfo.getPname());
+        //Glide.with(mCtx).load(uploadinfo.getCimage()).into(holder.cimage);
     }
+
 
     @Override
     public int getItemCount() {
@@ -53,6 +48,7 @@ public class Course_part_Adapter extends RecyclerView.Adapter<Course_part_Adapte
     class ArtistViewHolder extends RecyclerView.ViewHolder implements View.OnClickListener{
 
         TextView partnm;
+
 
         public ArtistViewHolder(@NonNull View itemView) {
             super(itemView);
@@ -72,3 +68,5 @@ public class Course_part_Adapter extends RecyclerView.Adapter<Course_part_Adapte
     }
 
 }
+
+

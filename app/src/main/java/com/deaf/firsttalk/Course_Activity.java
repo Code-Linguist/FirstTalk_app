@@ -8,9 +8,12 @@ import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
 import android.graphics.Color;
+import android.os.Build;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.View;
+import android.view.Window;
+import android.view.WindowManager;
 import android.widget.TextView;
 
 import com.google.firebase.auth.FirebaseAuth;
@@ -30,18 +33,23 @@ public class Course_Activity extends AppCompatActivity implements Course_week_Ad
     private FirebaseAuth firebaseAuth;
     private RecyclerView recyclerViewpart;
     private List<Course_part_Pojo> artistList1;
-    Course_part_Adapter adapterpart;
+    private Course_part_Adapter adapterpart;
     private DatabaseReference mFirebaseDatabase;
     TextView txtuniversity,txtcname,txtweeknm,txtweekinfo;
     RecyclerView recyclerVieweek;
     Course_week_Adapter adapterweek;
-
+    String str="hello";
 
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_course);
+
+        if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.KITKAT) {
+            Window w = getWindow();
+            w.setFlags(WindowManager.LayoutParams.FLAG_LAYOUT_NO_LIMITS, WindowManager.LayoutParams.FLAG_LAYOUT_NO_LIMITS);
+        }
 
         txtcname = findViewById(R.id.textcname);
         txtuniversity = findViewById(R.id.textuniversity);
@@ -66,25 +74,21 @@ public class Course_Activity extends AppCompatActivity implements Course_week_Ad
         adapterweek.setClickListener(this);
         recyclerVieweek.setAdapter(adapterweek);
 
-        //Recyclerview for part
-        firebaseAuth = FirebaseAuth.getInstance();
-
+        //part recyclerview
         recyclerViewpart = findViewById(R.id.recyclepartview);
         recyclerViewpart.setHasFixedSize(true);
         recyclerViewpart.setLayoutManager(new GridLayoutManager(this, 1));
 
-        //recyclerView.addItemDecoration(new DividerItemDecoration(this, DividerItemDecoration.VERTICAL));
         artistList1 = new ArrayList<>();
         adapterpart = new Course_part_Adapter(this, artistList1);
         recyclerViewpart.setAdapter(adapterpart);
         mFirebaseDatabase = FirebaseDatabase.getInstance().getReference();
 
-        Query query = FirebaseDatabase.getInstance().getReference("Part")
-                .orderByChild("cwid").equalTo("c1w1");
-
+        Query query = FirebaseDatabase.getInstance().getReference("Part").orderByChild("cwid").equalTo("c1w1");
         query.addListenerForSingleValueEvent(valueEventListener);
 
         adapterpart.setClickListener(this);
+
     }
 
     ValueEventListener valueEventListener = new ValueEventListener() {
@@ -92,17 +96,19 @@ public class Course_Activity extends AppCompatActivity implements Course_week_Ad
         public void onDataChange(DataSnapshot dataSnapshot) {
             artistList1.clear();
             if (dataSnapshot.exists()) {
-                    final Course_part_Pojo artist = dataSnapshot.getValue(Course_part_Pojo.class);
+                for (DataSnapshot snapshot : dataSnapshot.getChildren()) {
+                    final Course_part_Pojo artist = snapshot.getValue(Course_part_Pojo.class);
                     artistList1.add(artist);
                 }
                 adapterpart.notifyDataSetChanged();
             }
+        }
 
         @Override
-        public void onCancelled(@NonNull DatabaseError error) {
-
+        public void onCancelled(DatabaseError databaseError) {
         }
     };
+
 
     @Override
     public void onItemClick(View view, int position) {

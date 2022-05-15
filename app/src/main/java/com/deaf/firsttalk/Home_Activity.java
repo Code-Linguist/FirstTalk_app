@@ -9,7 +9,9 @@ import android.content.Intent;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.View;
+import android.widget.Button;
 import android.widget.ImageView;
+import android.widget.LinearLayout;
 import android.widget.Toast;
 
 import com.google.firebase.auth.FirebaseAuth;
@@ -21,11 +23,22 @@ import com.google.firebase.database.FirebaseDatabase;
 import com.google.firebase.database.Query;
 import com.google.firebase.database.ValueEventListener;
 
+import org.opencv.android.OpenCVLoader;
+
 import java.util.ArrayList;
 import java.util.List;
-
+import org.opencv.android.OpenCVLoader;
 
 public class Home_Activity extends AppCompatActivity implements RecycleItemClickListener{
+
+    static {
+        if(OpenCVLoader.initDebug()){
+            Log.d("MainActivity: ","Opencv is loaded");
+        }
+        else {
+            Log.d("MainActivity: ","Opencv failed to load");
+        }
+    }
 
     private FirebaseAuth firebaseAuth;
     FirebaseUser user;
@@ -34,6 +47,7 @@ public class Home_Activity extends AppCompatActivity implements RecycleItemClick
     private CourseAdapter adapter1;
     private DatabaseReference mFirebaseDatabase;
     String course_key;
+    LinearLayout linertranslate;
 
 
     @Override
@@ -41,7 +55,9 @@ public class Home_Activity extends AppCompatActivity implements RecycleItemClick
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_home);
 
+        linertranslate = findViewById(R.id.linertranslate);
         firebaseAuth = FirebaseAuth.getInstance();
+
 
         //NAvigation to User_black_icon
         ImageView user = findViewById(R.id.user);
@@ -73,6 +89,15 @@ public class Home_Activity extends AppCompatActivity implements RecycleItemClick
         query.addListenerForSingleValueEvent(valueEventListener);
 
         adapter1.setClickListener(this);
+
+        linertranslate.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent inte = new Intent(Home_Activity.this, Translate_Activity.class)
+                        .addFlags(Intent.FLAG_ACTIVITY_CLEAR_TASK | Intent.FLAG_ACTIVITY_CLEAR_TOP);
+                startActivity(inte);
+            }
+        });
     }
     ValueEventListener valueEventListener = new ValueEventListener() {
         @Override
