@@ -7,6 +7,20 @@ First Talk an an App which which bridges the communication gap between Deaf/Mute
 - Disha Sanghavi
 - Neha Suva 
 
+# Getting Started
+To perform detection for ASL run:
+python3 Detection/ASL_Detection/detection.py
+
+To perform detection for ISL (in Hindi) run:
+python3 Detection/Hindi/hindi_detection.py
+
+To perform detection for ISL (in Gujarati) run:
+python3 Detection/Gujarati/gujarati_detection.py
+
+To start App:
+Use Android Studio
+
+
 # Introduction
 This app bridges the gap between Deaf/Mute people and common people. It allows Deaf/Mute people to have regular conversations with common people on day to day basis, using our live detection system.
 
@@ -37,4 +51,5 @@ Our machine model created a .h5 Keras file but it was not functioning with Andro
 - Problem Type used in Classification
 - Overall Accuracy Rate is 0.96
 - Overall Error Rate is is 0.12
+
 
