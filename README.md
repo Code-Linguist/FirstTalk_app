@@ -31,6 +31,7 @@ Due to the disabilities faced by these challenged people, they find it difficult
 Our machine model created a .h5 Keras file but it was not functioning with Android studio code. Later, on converting .h5 file into .tflite file, the code worked.
 
 # Machine Model
+- It is in Python Language
 - Artificial Neural Network (ANN)
 - It is a linear model.
 - Problem Type used in Classification
