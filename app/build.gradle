@@ -10,6 +10,7 @@ apply plugin: 'com.google.gms.google-services'
 android {
     compileSdk 32
 
+
     defaultConfig {
         applicationId "com.deaf.firsttalk"
         minSdk 24
@@ -30,14 +31,24 @@ android {
         sourceCompatibility JavaVersion.VERSION_1_8
         targetCompatibility JavaVersion.VERSION_1_8
     }
+    sourceSets {
+        main {
+            jni {
+                srcDirs 'src\\main\\jni', 'src\\main\\jnilibs'
+            }
+        }
+    }
+
     // Specify tflite file should not be compressed for the app apk
     aaptOptions {
         noCompress "tflite"
+        noCompress "lite"
     }
     buildFeatures {
         mlModelBinding true
     }
 }
+
 
 dependencies {
 
@@ -57,5 +68,13 @@ dependencies {
     implementation 'de.hdodenhof:circleimageview:3.0.0'
     implementation 'com.google.firebase:firebase-database:19.3.1'
     implementation 'com.github.bumptech.glide:glide:4.11.0'
+    implementation 'org.tensorflow:tensorflow-lite:+'
 
+
+    implementation project(path: ':openCVLibrary310')
+    implementation 'org.tensorflow:tensorflow-lite-metadata:0.1.0-rc1'
+    implementation 'org.tensorflow:tensorflow-lite-gpu:2.2.0'
+    implementation 'org.tensorflow:tensorflow-lite-support:0.1.0'
+    implementation 'org.tensorflow:tensorflow-lite-task-vision:0.1.0'
+    implementation 'org.tensorflow:tensorflow-lite-task-text:0.1.0'
 }
