@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:card_view="http://schemas.android.com/apk/res-auto"
+    android:id="@+id/linercourse_part_info"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    android:orientation="horizontal"
+    android:layout_marginLeft="80dp"
+    android:layout_marginTop="10dp"
+    android:layout_marginBottom="8dp">
+
+
+    <de.hdodenhof.circleimageview.CircleImageView
+        android:id="@+id/subcatimageview"
+        android:layout_width="35dp"
+        android:layout_height="35dp"
+        android:src="@mipmap/ic_launcher" />
+
+    <TextView
+        android:id="@+id/subcatNameTextView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:layout_centerHorizontal="true"
+        android:layout_gravity="center_vertical"
+        android:layout_marginLeft="20dp"
+        android:text="JSon Image Name"
+        android:textColor="#B7333333"
+        android:textSize="16dp" />
+
+    <View
+        android:layout_width="900dp"
+        android:layout_height="2dp"
+        android:layout_marginTop="40dp"
+        android:layout_marginLeft="-80dp"
+        android:background="?android:attr/dividerHorizontal"/>
+
+
+</LinearLayout>

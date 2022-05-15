@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <com.google.android.material.card.MaterialCardView
+        android:id="@+id/card_week"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+       app:strokeWidth="1dp"
+        app:strokeColor="#B0CDCDCD"
+        app:cardElevation="3dp"
+        app:cardCornerRadius="9dp"
+        android:layout_margin="3dp">
+
+        <TextView
+            android:id="@+id/txtrecyclerweek"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Week1"
+            android:textSize="12dp"
+            android:padding="8dp"
+            android:textColor="#505050"/>
+
+    </com.google.android.material.card.MaterialCardView>
+</LinearLayout>

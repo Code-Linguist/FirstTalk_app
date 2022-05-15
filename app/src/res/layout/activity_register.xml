@@ -1,0 +1,153 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    tools:context=".Register_Activity">
+
+    <ImageView
+        android:id="@+id/btnregistertologinback"
+        android:layout_width="22dp"
+        android:layout_height="23dp"
+        android:src="@drawable/back_black_icon"
+        android:layout_marginTop="20dp"
+        android:layout_marginLeft="15dp"
+        android:adjustViewBounds="true"/>
+
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center_horizontal"
+        android:layout_marginLeft="40dp"
+        android:text="New To FirstTalk"
+        android:textColor="#F57F17"
+        android:textSize="25sp"
+        android:layout_marginTop="10dp"/>
+
+    <pl.droidsonroids.gif.GifImageView
+        android:visibility="visible"
+        android:layout_width="60dp"
+        android:layout_height="60dp"
+        android:scaleType="fitXY"
+        android:src="@drawable/register_1"
+        android:layout_gravity="right"
+        android:layout_marginRight="50dp"
+        android:layout_marginTop="-70dp"/>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:padding="20dp"
+        android:layout_marginTop="30dp">
+
+        <com.google.android.material.textfield.TextInputLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:foreground="#B0F4F4F4"
+            android:textColor="#E9333333"
+            android:hint="Full Name"
+            android:theme="@style/material.textfield.TextInputLayout.changeprimarycolor">
+
+            <com.google.android.material.textfield.TextInputEditText
+                android:id="@+id/regisname"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:inputType="text"
+                android:theme="@style/material.textfield.TextInputLayout.changeprimarycolor"/>
+
+        </com.google.android.material.textfield.TextInputLayout>
+
+        <com.google.android.material.textfield.TextInputLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:foreground="#B0F4F4F4"
+            android:textColor="#E9333333"
+            android:hint="Email"
+            android:layout_marginTop="20dp"
+            android:theme="@style/material.textfield.TextInputLayout.changeprimarycolor">
+
+            <com.google.android.material.textfield.TextInputEditText
+                android:id="@+id/regisEmailid"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:inputType="textEmailAddress"
+                android:theme="@style/material.textfield.TextInputLayout.changeprimarycolor"/>
+
+        </com.google.android.material.textfield.TextInputLayout>
+
+        <com.google.android.material.textfield.TextInputLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:foreground="#B0F4F4F4"
+            android:textColor="#E9333333"
+            android:layout_marginTop="20dp"
+            android:hint="Password"
+            app:endIconMode="password_toggle"
+            android:theme="@style/material.textfield.TextInputLayout.changeprimarycolor">
+
+            <com.google.android.material.textfield.TextInputEditText
+                android:id="@+id/regisPassword"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:inputType="textPassword"
+                android:theme="@style/material.textfield.TextInputLayout.changeprimarycolor"/>
+
+        </com.google.android.material.textfield.TextInputLayout>
+
+        <com.google.android.material.button.MaterialButton
+            android:id="@+id/regisbtnregister"
+            android:layout_width="match_parent"
+            android:layout_height="55dp"
+            android:layout_gravity="center_horizontal"
+            android:layout_marginTop="35dp"
+            android:text="REGISTER"
+            app:backgroundTint="#FFC610" />
+
+        <TextView
+            android:id="@+id/movetologintxt"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="40dp"
+            android:layout_gravity="center"
+            android:text="Have an acount"
+            android:textSize="11sp"
+            android:textColor="#81333333" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_horizontal"
+            android:text="_______"
+            android:textSize="11sp"
+            android:layout_marginTop="-6dp"
+            android:textColor="#81333333" />
+
+        <pl.droidsonroids.gif.GifImageView
+            android:visibility="visible"
+            android:layout_width="70dp"
+            android:layout_height="70dp"
+            android:scaleType="fitXY"
+            android:src="@drawable/register_2"
+            android:layout_gravity="left"
+            android:layout_marginLeft="10dp"
+            android:layout_marginTop="-50dp"/>
+
+
+    </LinearLayout>
+
+    <pl.droidsonroids.gif.GifImageView
+        android:visibility="visible"
+        android:layout_width="110dp"
+        android:layout_height="110dp"
+        android:scaleType="fitXY"
+        android:src="@drawable/register_4"
+        android:layout_gravity="right"
+        android:layout_marginRight="5dp"
+        android:layout_marginTop="-30dp"/>
+
+
+</LinearLayout>

@@ -1,0 +1,158 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:fitsSystemWindows="true"
+    android:orientation="vertical"
+    tools:context=".Account_Activity"
+    android:background="#95d3c8">
+
+    <ImageView
+        android:id="@+id/account_cancelbtn"
+        android:layout_width="24dp"
+        android:layout_height="24dp"
+        android:src="@drawable/cancel_white_icon"
+        android:layout_alignParentLeft="true"
+        android:layout_marginLeft="15dp"
+        android:layout_marginTop="27dp"/>
+
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Hey,"
+        android:textSize="19dp"
+        android:textStyle="bold"
+        android:textColor="#36414C"
+        android:gravity="center_horizontal"
+        android:layout_marginLeft="90dp"
+        android:layout_marginTop="-10dp"/>
+
+    <TextView
+        android:id="@+id/account_txtusername"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Neha Ahir"
+        android:textSize="21dp"
+        android:textStyle="bold"
+        android:textColor="#36414C"
+        android:gravity="right"
+        android:layout_marginLeft="100dp" />
+
+
+    <com.google.android.material.card.MaterialCardView
+        android:focusable="true"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        app:cardElevation="50dp"
+        app:cardCornerRadius="15dp"
+        android:layout_marginTop="10dp">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+
+        <com.google.android.material.card.MaterialCardView
+            android:id="@+id/account_cardprofiledetails"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            app:cardElevation="2dp"
+            android:layout_marginTop="40dp">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:layout_marginLeft="20dp">
+
+                <ImageView
+                    android:layout_width="26dp"
+                    android:layout_height="26dp"
+                    android:src="@drawable/account_profile"
+                    android:layout_margin="5dp"/>
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="Profile Details"
+                    android:textSize="16dp"
+                    android:textColor="#333"
+                    android:layout_margin="5dp"/>
+
+            </LinearLayout>
+
+        </com.google.android.material.card.MaterialCardView>
+
+        <com.google.android.material.card.MaterialCardView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            app:cardElevation="2dp"
+            android:layout_marginTop="20dp">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:layout_marginLeft="20dp">
+
+                <ImageView
+                    android:layout_width="26dp"
+                    android:layout_height="26dp"
+                    android:src="@drawable/account_course"
+                    android:layout_margin="5dp"/>
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="Your Course"
+                    android:textSize="16dp"
+                    android:textColor="#333"
+                    android:layout_margin="5dp"/>
+
+            </LinearLayout>
+
+        </com.google.android.material.card.MaterialCardView>
+
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="-4dp">
+
+                <pl.droidsonroids.gif.GifImageView
+                    android:layout_width="250dp"
+                    android:layout_height="200dp"
+                    android:layout_marginLeft="100dp"
+                    android:layout_marginTop="90dp"
+                    android:scaleType="fitXY"
+                    android:src="@drawable/account_learn"
+                    android:visibility="visible" />
+
+                <com.google.android.material.card.MaterialCardView
+                    android:layout_width="match_parent"
+                    android:layout_height="125dp"
+                    android:layout_alignParentBottom="true"
+                    android:layout_gravity="bottom"
+                    android:backgroundTint="#283747"
+                    app:cardElevation="50dp">
+
+                    <com.google.android.material.button.MaterialButton
+                        android:id="@+id/btnlogout"
+                        android:layout_width="300dp"
+                        android:layout_height="58dp"
+                        android:layout_gravity="center_horizontal"
+                        android:layout_marginTop="20dp"
+                        android:gravity="center"
+                        android:text="sign out"
+                        app:backgroundTint="#4C5B6A"
+                        app:elevation="10dp" />
+
+                </com.google.android.material.card.MaterialCardView>
+            </RelativeLayout>
+        </LinearLayout>
+
+
+    </com.google.android.material.card.MaterialCardView>
+</LinearLayout>
